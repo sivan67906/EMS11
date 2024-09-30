@@ -1,0 +1,38 @@
+﻿@using Domain.Entities
+@model Domain.Viewmodel.EmployeeViewmodel
+
+<form asp-action="Edit" asp-controller="Employee" method="post">
+<div class="card">
+    <div class="card-body text-center">
+        <h5 class="mb-4">Edit Employee</h5>
+        @* <img src="assets/images/user/avatar-3.jpg" class="img-radius mb-4" alt="User-Profile-Image"> *@
+        <div class="input-group mb-3">
+            <input hidden asp-for="Id"/>
+            <input asp-for="FirstName" type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <input asp-for="LastName" type="text" class="form-control">
+        </div>
+            <div class="input-group mb-3">
+                <select asp-for="Gndr" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control">
+                    <option>Select Gender</option>
+                    </select>
+            </div>
+ @*        <div class="mb-4 text-left">
+            <div class="form-group d-inline">
+                <div class="radio d-inline">
+                    <input type="radio" name="radio-in-1" id="radio-in-1" checked="">
+                    <label for="radio-in-1" class="cr">Private Profile</label>
+                </div>
+            </div>
+            <div class="form-group d-inline">
+                <div class="radio d-inline">
+                    <input type="radio" name="radio-in-1" id="radio-in-2">
+                    <label for="radio-in-2" class="cr">Public Profile</label>
+                </div>
+            </div>
+        </div> *@
+        <button type="submit" class="btn btn-primary shadow-2 mb-4">Update</button>
+    </div>
+</div>
+</form>
